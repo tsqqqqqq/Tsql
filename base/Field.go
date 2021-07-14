@@ -8,3 +8,7 @@ type FieldInfo struct {
 	PrimaryKey bool          //是否为主键
 	ReValue    reflect.Value //字段对应变量值 通过反射获取，reflect.Value.Interface()
 }
+
+func test() string {
+	return "abc"
+}
