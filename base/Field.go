@@ -18,7 +18,17 @@ func (f *FieldInfo) InitFieldInfo(obj interface{}) (res []FieldInfo) {
 		}
 		f.FieldName = key.Tag.Get("field")
 		f.ReValue = v.FieldByName(key.Name).Interface()
-		res = append(res, *f)
+		if f.checkNil() {
+			res = append(res, *f)
+		}
+
 	}
 	return
+}
+
+func (f *FieldInfo) checkNil() (res bool) {
+	if f.ReValue == 0 || f.ReValue == "" {
+		return
+	}
+	return true
 }

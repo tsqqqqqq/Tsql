@@ -3,10 +3,10 @@ package operation
 import "database/sql"
 
 type Service interface {
-	Insert() sql.Result
-	QueryList() sql.Result
-	Update() sql.Result
-	Delete(id int) sql.Result
-	QueryById(id int) sql.Result
-	Count() sql.Result
+	Insert() (sql.Result, error)
+	QueryList() (*sql.Rows, error)
+	Update() (sql.Result, error)
+	Delete() (sql.Result, error)
+	Query() (*sql.Rows, error)
+	Count() (int, error)
 }
