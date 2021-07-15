@@ -1,9 +1,9 @@
 package operation
 
 import (
-	"TSQL/base"
 	"database/sql"
 	"fmt"
+	"github.com/tsqqqqqq/Tsql/base"
 	"strings"
 )
 
